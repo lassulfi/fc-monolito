@@ -1,8 +1,7 @@
-import Id from "../../../../@shared/domain/value-object/id.value-object";
-import ProductGateway from "../../../gateway/product.gateway";
+import ProductGateway from "../../gateway/product.gateway";
 import { CheckStockInputDto, CheckStockOutputDto } from "./check-stock.dto";
 
-export interface CheckStockProps {
+export interface CheckStockDeps {
     productRepository: ProductGateway
 }
 
@@ -11,7 +10,7 @@ export default class CheckStockUseCase {
 
     constructor ({
         productRepository
-    }: CheckStockProps) {
+    }: CheckStockDeps) {
         this._productRepository = productRepository
     }
 
