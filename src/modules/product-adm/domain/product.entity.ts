@@ -19,8 +19,8 @@ export default class Product extends BaseEntity implements AggregateRoot {
     private _stock: number
     
     constructor(props: ProductProps) {
-        const { id, name, description, purchasePrice, stock } = props
-        super(id)
+        const { id, name, description, purchasePrice, stock, createdAt, updatedAt } = props
+        super({id, createdAt, updatedAt})
         this._name = name
         this._description = description
         this._purchasePrice = purchasePrice
