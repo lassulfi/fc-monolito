@@ -11,7 +11,13 @@ const client = new Client({
     id: new Id("1"),
     name: "Client 1",
     email: "c@c.com",
-    address: "Address 1"
+    document: "123",
+    street: "Street 1",
+    number: "1",
+    complement: "Complement 1",
+    city: "City 1",
+    state: "State 1",
+    zipCode: "ZipCode 1"
 })
 
 describe("Find client use case unit test", () => {
@@ -33,7 +39,13 @@ describe("Find client use case unit test", () => {
         expect(output.id).toEqual(client.id.id)
         expect(output.name).toEqual(client.name)
         expect(output.email).toEqual(client.email)
-        expect(output.address).toEqual(client.address)
+        expect(output.document).toEqual(client.document)
+        expect(output.street).toEqual(client.street)
+        expect(output.number).toEqual(client.number)
+        expect(output.complement).toEqual(client.complement)
+        expect(output.city).toEqual(client.city)
+        expect(output.state).toEqual(client.state)
+        expect(output.zipCode).toEqual(client.zipCode)
         expect(output.createdAt).toEqual(client.createdAt)
         expect(output.updatedAt).toEqual(client.updatedAt)
     })

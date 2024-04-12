@@ -28,7 +28,13 @@ describe("Client repository test", () => {
         id: "1",
         name: "Client 1",
         email: "client1@example.com",
-        address: "Address 1",
+        document: "123456789",
+        street: "Street 1",
+        number: "123",
+        complement: "Complement 1",
+        city: "City 1",
+        state: "State 1",
+        zipCode: "12345-678",
         createdAt: new Date(),
         updatedAt: new Date(),
     })
@@ -40,7 +46,13 @@ describe("Client repository test", () => {
     expect(result.id.id).toEqual(client.id);
     expect(result.name).toEqual(client.name);
     expect(result.email).toEqual(client.email);
-    expect(result.address).toEqual(client.address);
+    expect(result.document).toEqual(client.document);
+    expect(result.street).toEqual(client.street);
+    expect(result.number).toEqual(client.number);
+    expect(result.complement).toEqual(client.complement);
+    expect(result.city).toEqual(client.city);
+    expect(result.state).toEqual(client.state);
+    expect(result.zipCode).toEqual(client.zipCode);
     expect(result.createdAt).toEqual(client.createdAt);
     expect(result.updatedAt).toEqual(client.updatedAt);
   })
@@ -50,7 +62,13 @@ describe("Client repository test", () => {
         id: new Id("1"),
         name: "Client 1",
         email: "client1@example.com",
-        address: "Address 1",
+        document: "123456789",
+        street: "Street 1",
+        number: "123",
+        complement: "Apartment 1",
+        city: "City 1",
+        state: "State 1",
+        zipCode: "12345-678",
     })
 
     const repository = new ClientRepository();
@@ -65,7 +83,13 @@ describe("Client repository test", () => {
     expect(model.id).toEqual(client.id.id);
     expect(model.name).toEqual(client.name);
     expect(model.email).toEqual(client.email);
-    expect(model.address).toEqual(client.address);
+    expect(model.document).toEqual(client.document);
+    expect(model.street).toEqual(client.street);
+    expect(model.number).toEqual(client.number);
+    expect(model.complement).toEqual(client.complement);
+    expect(model.city).toEqual(client.city);
+    expect(model.state).toEqual(client.state);
+    expect(model.zipCode).toEqual(client.zipCode);
     expect(model.createdAt).toEqual(client.createdAt);
     expect(model.updatedAt).toEqual(client.updatedAt);
   })
