@@ -8,6 +8,8 @@ type OrderProps = {
     client: Client
     products: Product[]
     status?: string
+    createdAt?: Date
+    updatedAt?: Date
 }
 
 export default class Order extends BaseEntity {
@@ -16,9 +18,9 @@ export default class Order extends BaseEntity {
     private _status: string
 
     constructor(props: OrderProps) {
-        const { id, client, products, status } = props
+        const { id, client, products, status, createdAt, updatedAt } = props
 
-        super({id})
+        super({ id, createdAt, updatedAt })
         this._client = client
         this._products = products
         this._status = status || 'pending'
