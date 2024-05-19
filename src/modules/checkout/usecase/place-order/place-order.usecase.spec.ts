@@ -215,6 +215,10 @@ describe("Place order use case unit test", () => {
     });
 
     describe("place an order", () => {
+      afterEach(() => {
+        jest.clearAllMocks()
+      })
+
       const clientProps = {
         id: "c1",
         name: "Client 1",
@@ -222,7 +226,7 @@ describe("Place order use case unit test", () => {
         email: "client@user.com",
         street: "some address",
         number: "123",
-        complement: "",
+        complement: "Some complement",
         city: "some city",
         state: "some state",
         zipCode: "000",

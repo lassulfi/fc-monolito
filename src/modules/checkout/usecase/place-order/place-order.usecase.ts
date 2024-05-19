@@ -47,10 +47,7 @@ export default class PlaceOrderUseCase implements UseCaseInterface {
   async execute(input: PlaceOrderInputDto): Promise<PlaceOrderOutputDto> {
     const { clientId, products } = input;
 
-    console.log(this._clientFacade)
-
     const client = await this._clientFacade.find({ id: clientId });
-    console.log(client)
     if (!client) {
       throw new Error(`Client ID [${clientId}] not found `);
     }

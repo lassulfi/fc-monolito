@@ -10,11 +10,15 @@ import { migrator } from "../../../config/migrator/migrator"
 import { Umzug } from "umzug"
 import { clientRoute } from "../../client-adm/web/routes/client-adm.route"
 import { productRoute } from "../../product-adm/web/routes/product-adm.route"
+import { checkoutRoute } from "../../checkout/web/routes/checkout.route"
+import { invoiceRoute } from "../../invoice/web/routes/invoice.route"
 
 export const app: Express = express()
 app.use(express.json())
 app.use("/clients", clientRoute)
 app.use("/products", productRoute)
+app.use("/checkout", checkoutRoute)
+app.use("/invoices", invoiceRoute)
 
 export let sequelize: Sequelize
 
